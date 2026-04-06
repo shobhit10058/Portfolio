@@ -1,0 +1,68 @@
+export const experiences = [
+  {
+    title: "Senior Backend Engineer",
+    company: "Dialflo (Digicrow Lab Pvt Ltd)",
+    location: "Voice AI Platform",
+    date: "Jan 2026 - Present",
+    points: [
+      "Built low-latency, scalable backend services (Python) for a multi-tenant real-time Voice AI streaming platform, handling call analytics and data persistence in PostgreSQL.",
+      "Improved accuracy, interruption handling and reduced STT latency by 0.5s via utterance finalization and buffering.",
+      "Designed fault-tolerant Celery-based async processing pipelines to offload heavy post-call analytics, eliminating request-path blocking and improving system throughput and reliability.",
+    ],
+    tech: ["Python", "PostgreSQL", "Celery", "Voice AI", "WebSockets"],
+    icon: "work",
+  },
+  {
+    title: "Software Engineer, AI Team",
+    company: "Wayground (Previously Quizizz)",
+    location: "",
+    date: "May 2025 - Dec 2025",
+    points: [
+      "Scaled recommendation APIs to 10M+ calls/month by improving throughput and latency through API redesign.",
+      "Reduced infra cost by 30% using Redis caching and efficient serialization with MessagePack, improving latency.",
+      "Led large-scale data migrations with Python (asyncio) scripts, rate limiting and Grafana monitoring for safe rollout.",
+      "Built a global LLM-powered document-to-quiz pipeline generating 5K+ quizzes/day with optimized cost and latency.",
+    ],
+    tech: ["Python", "Redis", "LLM", "Grafana", "MessagePack"],
+    icon: "work",
+  },
+  {
+    title: "Product Engineer",
+    company: "Sprinklr",
+    location: "Advocacy",
+    date: "July 2023 - May 2025",
+    points: [
+      "Owned and scaled a high-availability microservice (Java/Spring, MongoDB), handling 1M+ requests/day.",
+      "Re-architected critical components to Kafka-based pub-sub architecture with async workers, reducing latency and improving throughput.",
+      "Optimized post-to-employee targeting by replacing rule-engine driven updates with publish-synced configs and batched user updates.",
+      "Improved reliability with 300+ JUnit/Mockito tests and strengthened regression coverage for critical flows.",
+      "Resolved production issues (race conditions, latency issues) using Graylog, Kibana, and Grafana dashboards.",
+    ],
+    tech: ["Java", "Spring", "MongoDB", "Kafka", "Elasticsearch"],
+    icon: "work",
+  },
+  {
+    title: "Product Engineer Intern",
+    company: "Sprinklr",
+    location: "",
+    date: "May 2022 - July 2022",
+    points: [
+      "Built a peer-to-peer screen-sharing feature for web + mobile using Next.js/WebRTC and React Native.",
+      "Instrumented WebRTC call quality by exposing metrics (jitter, packet loss, RTT, bitrate) to monitor real-time connectivity.",
+      "Deployed and tuned CoTURN on Azure to improve connectivity and call reliability across VPN/long-distance networks.",
+    ],
+    tech: ["Next.js", "WebRTC", "React Native", "Azure"],
+    icon: "work",
+  },
+  {
+    title: "B.Tech in Electronics & Electrical Communication Engineering",
+    company: "Indian Institute of Technology Kharagpur",
+    location: "CGPA: 9.03 / 10",
+    date: "2019 - 2023",
+    points: [
+      "Led team winning Gold at IIT KGP Inter Hall OpenSoft 2023, building microservices with Docker and Kubernetes.",
+    ],
+    tech: ["Docker", "Kubernetes", "Microservices"],
+    icon: "education",
+  },
+];
