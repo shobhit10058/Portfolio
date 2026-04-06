@@ -6,7 +6,7 @@ export const PERSONAL = {
   github: "https://github.com/shobhit10058",
   linkedin: "https://www.linkedin.com/in/shobhit-iitkgp/",
   location: "India",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 };
 
 export const NAV_LINKS = [
