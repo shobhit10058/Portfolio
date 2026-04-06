@@ -35,13 +35,13 @@ const StatCard = ({ value, suffix = "", label }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="flex-1 min-w-[140px] text-center p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-purple-500/30 transition-colors duration-300"
+      className="flex-1 min-w-[140px] text-center p-7 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-purple-500/30 transition-colors duration-300"
     >
       <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
         {display}
         {suffix}
       </p>
-      <p className="mt-2 text-sm text-gray-400">{label}</p>
+      <p className="mt-3 text-sm text-gray-400">{label}</p>
     </motion.div>
   );
 };
@@ -67,7 +67,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-20 md:py-24 overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -79,14 +79,14 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
+          className="text-3xl md:text-4xl font-bold text-center mb-14"
         >
           <span className="bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
             About Me
           </span>
         </motion.h2>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Profile photo placeholder */}
           <motion.div
             variants={fadeUp}
@@ -111,7 +111,7 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: true }}
               custom={1}
-              className="text-gray-300 leading-relaxed text-lg"
+              className="text-gray-300 leading-loose text-lg"
             >
               I&apos;m a Senior Backend Engineer with 3+ years of experience
               building high-performance distributed systems. From scaling APIs
@@ -125,7 +125,7 @@ const About = () => {
         </div>
 
         {/* Stats row */}
-        <div className="mt-16 flex flex-wrap justify-center gap-4 md:gap-6">
+        <div className="mt-14 flex flex-wrap justify-center gap-4 md:gap-6">
           {stats.map((s) => (
             <StatCard
               key={s.label}

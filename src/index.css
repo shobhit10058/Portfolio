@@ -13,9 +13,7 @@
   --font-mono: "JetBrains Mono", monospace;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -28,6 +26,21 @@ body {
   background-color: #0a0a0f;
   color: #e2e8f0;
   overflow-x: hidden;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+p {
+  line-height: 1.7;
+}
+
+li {
+  line-height: 1.6;
 }
 
 /* Custom scrollbar */
@@ -84,15 +97,4 @@ body {
 
 .vertical-timeline::before {
   background: rgba(139, 92, 246, 0.3) !important;
-}
-
-/* Section padding */
-section {
-  padding: 5rem 1rem;
-}
-
-@media (min-width: 768px) {
-  section {
-    padding: 6rem 2rem;
-  }
 }

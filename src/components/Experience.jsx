@@ -15,6 +15,7 @@ const Experience = () => {
     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.3)",
     backdropFilter: "blur(12px)",
     color: "#e2e8f0",
+    padding: "1.75rem 2rem",
   };
 
   const contentArrowStyle = {
@@ -34,7 +35,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="relative py-24 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="relative py-20 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.h2
@@ -42,7 +43,7 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-500 via-violet-400 to-cyan-400 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 via-violet-400 to-cyan-400 bg-clip-text text-transparent"
         >
           Experience
         </motion.h2>
@@ -62,10 +63,10 @@ const Experience = () => {
                 icon={isEducation ? <MdSchool /> : <MdWork />}
                 visible={true}
               >
-                <h3 className="text-lg sm:text-xl font-bold text-white">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
                   {exp.title}
                 </h3>
-                <h4 className="text-sm sm:text-base font-semibold text-purple-400 mt-1">
+                <h4 className="text-sm sm:text-base font-semibold text-purple-400 mt-2">
                   {exp.company}
                   {exp.location && (
                     <span className="text-gray-500 font-normal">
@@ -76,7 +77,7 @@ const Experience = () => {
                 </h4>
 
                 {/* Bullet Points */}
-                <ul className="mt-4 space-y-2 list-disc list-inside">
+                <ul className="mt-6 space-y-4 list-disc list-inside">
                   {exp.points.map((point, i) => (
                     <li
                       key={i}
@@ -88,7 +89,7 @@ const Experience = () => {
                 </ul>
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-white/10">
+                <div className="flex flex-wrap gap-2 mt-6 pt-5 border-t border-white/10">
                   {exp.tech.map((tag, i) => (
                     <span
                       key={i}

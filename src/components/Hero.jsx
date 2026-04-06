@@ -93,7 +93,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm sm:text-base tracking-widest uppercase text-cyan-400 mb-4"
+          className="text-sm sm:text-base tracking-widest uppercase text-cyan-400 mb-6"
         >
           Hello, I&apos;m
         </motion.p>
@@ -103,7 +103,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-10"
         >
           {PERSONAL.name}
         </motion.h1>
@@ -113,7 +113,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="h-10 sm:h-12 flex items-center justify-center mb-8"
+          className="h-10 sm:h-12 flex items-center justify-center mb-14"
         >
           <span className="text-lg sm:text-xl md:text-2xl font-medium text-purple-400">
             {typedText}
@@ -126,7 +126,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-6"
         >
           <button
             onClick={() => scrollTo("#projects")}

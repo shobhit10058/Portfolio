@@ -55,7 +55,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative py-20 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section title */}
         <motion.h2
@@ -63,7 +63,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl font-bold text-center mb-16"
+          className="text-3xl sm:text-4xl font-bold text-center mb-12"
         >
           <span className="bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
             Get In Touch
@@ -79,16 +79,16 @@ export default function Contact() {
             viewport={{ once: true }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-semibold text-white mb-4">
+            <h3 className="text-2xl font-semibold text-white mb-8">
               Let&apos;s work together
             </h3>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-loose mb-10">
               I&apos;m always interested in hearing about new projects, opportunities,
               and collaborations. Whether you have a question or just want to say
               hi, feel free to reach out!
             </p>
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-5 mb-10">
               <div className="flex items-center gap-3 text-gray-300">
                 <MdEmail className="text-purple-400 text-xl flex-shrink-0" />
                 <a
@@ -110,7 +110,7 @@ export default function Contact() {
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-5">
               {SOCIAL_LINKS.map(({ icon: Icon, label, href, color }) => (
                 <a
                   key={label}
@@ -135,11 +135,11 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8 space-y-5"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 sm:p-10 space-y-6"
             >
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm text-gray-300 mb-1.5">
+                <label htmlFor="name" className="block text-sm text-gray-300 mb-2.5">
                   Name
                 </label>
                 <input
@@ -158,7 +158,7 @@ export default function Contact() {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm text-gray-300 mb-1.5">
+                <label htmlFor="email" className="block text-sm text-gray-300 mb-2.5">
                   Email
                 </label>
                 <input
@@ -177,14 +177,14 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm text-gray-300 mb-1.5">
+                <label htmlFor="message" className="block text-sm text-gray-300 mb-2.5">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
-                  rows={5}
+                  rows={6}
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Your message..."

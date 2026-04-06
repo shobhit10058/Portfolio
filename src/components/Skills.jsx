@@ -22,7 +22,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative py-24 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="relative py-20 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.h2
@@ -30,13 +30,13 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-500 via-violet-400 to-cyan-400 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 via-violet-400 to-cyan-400 bg-clip-text text-transparent"
         >
           Technical Skills
         </motion.h2>
 
         {/* Skill Categories */}
-        <div className="space-y-14">
+        <div className="space-y-10">
           {skillCategories.map((category, catIdx) => (
             <div key={catIdx}>
               {/* Category Title */}
@@ -45,7 +45,7 @@ const Skills = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl sm:text-2xl font-semibold text-purple-300 mb-6 pl-1"
+                className="text-xl sm:text-2xl font-semibold text-purple-300 mb-5 pl-1"
               >
                 {category.title}
               </motion.h3>
@@ -56,7 +56,7 @@ const Skills = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4"
+                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6"
               >
                 {category.skills.map((skill, skillIdx) => {
                   const Icon = skill.icon;
@@ -68,7 +68,7 @@ const Skills = () => {
                         scale: 1.05,
                         boxShadow: "0 10px 40px rgba(139, 92, 246, 0.2)",
                       }}
-                      className="group relative flex items-center gap-3 px-4 py-3 rounded-xl
+                      className="group relative flex items-center gap-3 px-5 py-4 rounded-xl
                         bg-white/5 backdrop-blur-md border border-white/10
                         hover:border-purple-500/40 hover:bg-white/[0.08]
                         transition-all duration-300 cursor-default"

@@ -62,11 +62,11 @@ const RatingCard = ({ platform, rating, handle, link, color, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 text-center hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all duration-300 block"
+      className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-7 sm:p-8 text-center hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all duration-300 block"
     >
-      <p className="text-sm text-gray-400 mb-1 font-medium">{platform}</p>
+      <p className="text-sm text-gray-400 mb-3 font-medium">{platform}</p>
       <p
-        className="text-4xl sm:text-5xl font-bold mb-2"
+        className="text-4xl sm:text-5xl font-bold mb-3"
         style={{ color }}
       >
         {count}
@@ -86,7 +86,7 @@ const CompetitionCard = ({ title, detail, icon, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 flex items-start gap-4 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all duration-300"
+      className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 sm:p-7 flex items-start gap-4 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all duration-300"
     >
       <div className="shrink-0 mt-1 w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500/20 transition-colors">
         <Icon className="text-lg" />
@@ -102,20 +102,20 @@ const CompetitionCard = ({ title, detail, icon, index }) => {
 /* ---- Main Component ---- */
 const Achievements = () => {
   return (
-    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="achievements" className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl sm:text-4xl font-bold text-center mb-14 bg-gradient-to-r from-purple-500 to-violet-400 bg-clip-text text-transparent"
+        className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 via-violet-400 to-cyan-400 bg-clip-text text-transparent"
       >
         Achievements
       </motion.h2>
 
       {/* CP Ratings */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
         {competitiveProgramming.map((cp, i) => (
           <RatingCard key={cp.platform} {...cp} index={i} />
         ))}
@@ -132,7 +132,7 @@ const Achievements = () => {
         Competition Highlights
       </motion.h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {competitionHighlights.map((item, i) => (
           <CompetitionCard key={item.title} {...item} index={i} />
         ))}

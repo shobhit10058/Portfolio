@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { blogPosts } from "../data/blog-posts";
 import BlogPost from "./BlogPost";
@@ -22,8 +22,23 @@ const DEFAULT_TAG = "bg-gray-500/20 text-gray-300 border-gray-500/30";
 export default function Blog() {
   const [selectedPost, setSelectedPost] = useState(null);
 
+  const handleEsc = useCallback((e) => {
+    if (e.key === "Escape") setSelectedPost(null);
+  }, []);
+
+  useEffect(() => {
+    if (selectedPost) {
+      document.addEventListener("keydown", handleEsc);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "";
+    };
+  }, [selectedPost, handleEsc]);
+
   return (
-    <section id="blog" className="relative py-24 px-4 sm:px-6 lg:px-8">
+    <section id="blog" className="relative py-20 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section title */}
         <motion.h2
@@ -31,7 +46,7 @@ export default function Blog() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl font-bold text-center mb-16"
+          className="text-3xl sm:text-4xl font-bold text-center mb-12"
         >
           <span className="bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
             Blog
@@ -44,34 +59,34 @@ export default function Blog() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {blogPosts.map((post) => (
             <motion.article
               key={post.id}
               variants={fadeInUp}
-              className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6
+              className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 sm:p-8
                 hover:border-purple-500/40 hover:bg-white/[0.07] transition-all duration-300 flex flex-col"
             >
               {/* Date & Read time */}
-              <div className="flex items-center gap-3 text-sm text-gray-400 mb-3">
+              <div className="flex items-center gap-3 text-sm text-gray-400 mb-4">
                 <span>{post.date}</span>
                 <span className="w-1 h-1 rounded-full bg-gray-500" />
                 <span>{post.readTime}</span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-purple-300 transition-colors">
+              <h3 className="text-lg font-semibold text-white mb-5 group-hover:text-purple-300 transition-colors">
                 {post.title}
               </h3>
 
               {/* Excerpt */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">
                 {post.excerpt}
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-5">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
@@ -116,7 +131,7 @@ export default function Blog() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-10 px-4"
+            className="fixed inset-0 z-[100] flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-10 px-4"
             onClick={(e) => {
               if (e.target === e.currentTarget) setSelectedPost(null);
             }}
