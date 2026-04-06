@@ -96,10 +96,12 @@ const About = () => {
             custom={0}
             className="shrink-0"
           >
-            <div className="w-52 h-52 md:w-64 md:h-64 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-400/20 border border-white/10 flex items-center justify-center">
-              <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent select-none">
-                SG
-              </span>
+            <div className="w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-lg shadow-purple-500/10">
+              <img
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
+                alt="Shobhit Gupta"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </motion.div>
 
